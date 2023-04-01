@@ -7,7 +7,7 @@ The app consists of the following features:
 - Main Library: react
 - CSS FrameWork: mui
 - State Handling: recoil
-- HTTP Request: axios
+- HTTP Request: fetch API
 - Router Library: react router dom
 - Typescript
 

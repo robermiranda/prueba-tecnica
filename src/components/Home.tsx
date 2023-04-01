@@ -34,7 +34,7 @@ export default function Home () {
                 <ListItemText primary="State Handling" secondary="recoil"/>
             </ListItem>
             <ListItem>
-                <ListItemText primary="HTTP Request" secondary="axios"/>
+                <ListItemText primary="HTTP Request" secondary="fetch API"/>
             </ListItem>
             <ListItem>
                 <ListItemText primary="Router Library" secondary="react router dom"/>
