@@ -1,9 +1,9 @@
 import { bankT } from './bankTypes';
 
-const BASE_URL: string = 'https://dev.obtenmas.com/catom/api/challenge/banks';
+const URL: string = '/bank';
 
 export default async function fetchBankList (): Promise<bankT[]> {
-    return fetch(BASE_URL)
+    return fetch(URL)
     .then(response => response.json())
     .then(response => response)
     .catch(error => {
