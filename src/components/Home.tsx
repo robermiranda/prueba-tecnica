@@ -31,7 +31,7 @@ export default function Home () {
                 <ListItemText primary="CSS FrameWork" secondary="mui"/>
             </ListItem>
             <ListItem>
-                <ListItemText primary="State Handling" secondary="recoil"/>
+                <ListItemText primary="State Management" secondary="recoil"/>
             </ListItem>
             <ListItem>
                 <ListItemText primary="HTTP Request" secondary="fetch API"/>
