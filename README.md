@@ -13,4 +13,6 @@ The app consists of the following features:
 
 Regarding the architecture's app, it should be noted that it is determined by the framework used (react in this case). Then we can affirm that the app has a component-based architecture.
 
+Visit the app: [prueba-tecnica](https://prueba-tecnica-uvts.onrender.com)
+
 Visit my page [Roberto Miranda](https://portfolio-delta-lyart.vercel.app/).
