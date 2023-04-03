@@ -1,27 +1,11 @@
-/*
-import { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
-*/
 import { useRecoilValue } from 'recoil';
-import { /*bankListState,*/ bankState } from '../util/state';
+import { bankState } from '../util/state';
 import { bankT } from '../util/bankTypes';
 import { Card, CardContent,  CardMedia } from '@mui/material';
 import { Box, Typography }  from '@mui/material';
 
 
 export default function BankCard () {
-
-    /*
-    const { id } = useParams();
-    const bankList = useRecoilValue(bankListState);
-    const [bank, setBank] = useState<bankT>();
-    
-
-    
-    useEffect(() => {
-        const bank = bankList.find(bank => bank.id === id);
-        setBank(bank);
-    }, [id, bankList]);*/
 
     const bank: bankT = useRecoilValue<bankT>(bankState);
 
