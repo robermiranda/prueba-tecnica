@@ -1,6 +1,13 @@
-import { bankT } from './bankTypes';
+import { bankT, bank0 } from './bankTypes';
 import fetchBankList from '../util/net';
-import { selector } from 'recoil';
+import { atom, selector } from 'recoil';
+
+
+export const bankState = atom ({
+    key: 'bankState',
+    default: bank0
+});
+
 
 const bankListFetched = selector<bankT[]> ({
     key: 'bankListFetched',
@@ -16,7 +23,16 @@ export const bankListState = selector<bankT[]>({
     get: ({get}) => {
         const bankList = get(bankListFetched);
         return bankList.map(bank => {
-            return {id: bank.bankName.replaceAll(' ', '_'), ...bank}
+            return {...bank, id: bank.bankName.replaceAll(' ', '_')}
         });
+    }
+});
+
+
+export const bankNameState = selector<string[]>({
+    key: 'bankNameSelector',
+    get: ({get}) => {
+        const bankList = get(bankListState);
+        return bankList.map(bank => bank.bankName);
     }
 });
