@@ -15,4 +15,6 @@ Regarding the architecture's app, it should be noted that it is determined by th
 
 Visit the app: [prueba-tecnica](https://prueba-tecnica-uvts.onrender.com)
 
+Visit the app one-page version: [prueba-tecnica-one-page](https://prueba-tecnica-1.onrender.com/)
+
 Visit my page [Roberto Miranda](https://portfolio-delta-lyart.vercel.app/).
