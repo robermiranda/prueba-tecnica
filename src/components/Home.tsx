@@ -1,6 +1,7 @@
 import { Box, Link, Typography } from '@mui/material';
 import { List, ListItem, ListItemText } from '@mui/material';
 import BankListLink from "./BankListLink";
+import ResponsiveAppBar from "./ResponsiveAppBar";
 
 
 export default function Home () {
@@ -12,6 +13,7 @@ export default function Home () {
             flexGrow: 1,
         }}>
 
+        <ResponsiveAppBar/>
         <Typography variant="h5" align="center" gutterBottom>
             REACT ENGINEER PRACTICAL TEST
         </Typography>
