@@ -5,9 +5,8 @@ import { useParams } from 'react-router-dom';
 import { useRecoilValue } from 'recoil';
 import { /*bankListState,*/ bankState } from '../util/state';
 import { bankT } from '../util/bankTypes';
-import { Card, CardActions, CardContent,  CardMedia } from '@mui/material';
+import { Card, CardContent,  CardMedia } from '@mui/material';
 import { Box, Typography }  from '@mui/material';
-import BankListLink from "./BankListLink";
 
 
 export default function BankCard () {
@@ -51,9 +50,6 @@ export default function BankCard () {
                     Age: {bank.age}
                 </Typography>
             </CardContent>
-            <CardActions>
-                <BankListLink/>
-            </CardActions>
         </Card>
     </Box>
 }
