@@ -10,12 +10,10 @@ export default function BankCard () {
     const bank: bankT = useRecoilValue<bankT>(bankState);
 
     return <Box sx={{
-            p:2,
+            pt: 2,
             margin: "auto",
             maxWidth: 800,
             flexGrow: 1,
-            backgroundColor: (theme) => 
-                theme.palette.mode === 'dark' ? '#1A2027' : theme.palette.grey[50]
         }}>
 
         <Card>
