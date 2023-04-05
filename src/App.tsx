@@ -3,7 +3,6 @@ import {RecoilRoot} from 'recoil';
 import BankList from './components/BankList';
 import { Box } from '@mui/material';
 import BankCard from './components/BankCard';
-import Home from './components/Home';
 import Page404 from './components/Page404';
 import {
     BrowserRouter as Router,
@@ -18,8 +17,7 @@ function App() {
             <RecoilRoot>
             <Suspense fallback={<p>Loading Data . . . . .</p>}>
                 <Routes>
-                    <Route path='/' element={ <Home/> }/>
-                    <Route path='/bankList' element={ <BankList/> }/>
+                    <Route path='/' element={ <BankList/> }/>
                     <Route path='/bank/:id' element={ <BankCard/> }/>
                     <Route path='*' element={ <Page404/> }/>
                 </Routes>
