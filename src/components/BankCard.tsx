@@ -20,7 +20,6 @@ export default function BankCard () {
     }, [id, bankList]);
 
     return <Box sx={{
-            p:2,
             margin: "auto",
             maxWidth: 800,
             flexGrow: 1,
