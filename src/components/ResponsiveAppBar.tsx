@@ -10,7 +10,6 @@ import Button from '@mui/material/Button';
 import MenuItem from '@mui/material/MenuItem';
 import { Typography } from '@mui/material';
 import { ThemeProvider, createTheme } from '@mui/material/styles';
-import logo from '../assets/logo192.png';
 import { bankNameState, bankListState, bankState } from '../util/state';
 import { useRecoilValue, useRecoilState } from 'recoil';
 import { bankT } from '../util/bankTypes';
@@ -53,7 +52,7 @@ export default function ResponsiveAppBar () {
             <AppBar position="static">
                 <Container maxWidth="xl">
                     <Toolbar disableGutters>
-                        <img src={logo} alt="logo react" width="25"/>
+                        <img src={require(`../assets/${bank.logo}`)} alt="logo react" width="25"/>
                         <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
                             <IconButton size="large"
                                 aria-label="account of current user"
