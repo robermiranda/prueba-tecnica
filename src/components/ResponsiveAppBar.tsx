@@ -12,18 +12,8 @@ import { Typography } from '@mui/material';
 import { ThemeProvider, createTheme } from '@mui/material/styles';
 import logo from '../assets/logo192.png';
 import { bankNameState, bankListState, bankState } from '../util/state';
-import { useRecoilValue, useSetRecoilState } from 'recoil';
+import { useRecoilValue, useRecoilState } from 'recoil';
 import { bankT } from '../util/bankTypes';
-
-
-const pumasTheme = createTheme({
-    palette: {
-        mode: 'light',
-        primary: {
-            main: '#0C2453',
-        },
-    },
-});
 
 
 export default function ResponsiveAppBar () {
@@ -34,7 +24,7 @@ export default function ResponsiveAppBar () {
 
     const bankList: bankT[] = useRecoilValue<bankT[]>(bankListState);
 
-    const setBank = useSetRecoilState(bankState);
+    const [bank, setBank] = useRecoilState(bankState);
 
     const handleOpenNavMenu = (event: React.MouseEvent<HTMLElement>) => {
         setAnchorElNav(event.currentTarget);
@@ -49,8 +39,17 @@ export default function ResponsiveAppBar () {
         if (bank && "bankName" in bank) setBank(bank);
     }
 
+    const bankTheme = createTheme({
+        palette: {
+            mode: 'light',
+            primary: {
+                main: bank.color
+            },
+        },
+    });
+    
     return (
-        <ThemeProvider theme={pumasTheme}>
+        <ThemeProvider theme={bankTheme}>
             <AppBar position="static">
                 <Container maxWidth="xl">
                     <Toolbar disableGutters>
