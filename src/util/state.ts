@@ -27,6 +27,9 @@ export const bankListState = selector<bankT[]>({
         })
         .map(bank => {
             return {...bank, color: getColor(bank.id)}
+        })
+        .map(bank => {
+            return {...bank, logo: getLogo(bank.id)}
         });
     }
 });
@@ -49,5 +52,16 @@ function getColor (id: string): string {
         case 'CITIBANAMEX': return '#066cae';
         case 'BANREGIO': return '#fb6d2f';
         default: return '#1c2833';
+    }
+}
+
+function getLogo (id: string): string {
+    switch (id.toUpperCase()) {
+        case 'PAGA_TODO': return 'pagaTodo.png';
+        case 'BBVA_BANCOMER': return 'bbva.png';
+        case 'SCOTIABANK_MÉXICO': return 'scotiabank.png';
+        case 'CITIBANAMEX': return 'banamex.jpeg';
+        case 'BANREGIO': return 'banregio.png';
+        default: return 'logo192.png';
     }
 }
