@@ -6,6 +6,7 @@ export type bankT = {
     url: string;
     bankName: string;
     color: string;
+    logo: string;
 }
 
 export const bank0 = {
@@ -15,4 +16,5 @@ export const bank0 = {
     url: '',
     bankName: '',
     color: '#1c2833',
+    logo: 'logo192.png',
 }
