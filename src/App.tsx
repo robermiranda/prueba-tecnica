@@ -13,7 +13,7 @@ import {
 function App() {
     return (
         <Router>
-            <Box mx={2} mt={3}>
+            <Box mx={{xs: 0.2, md: 2}} mt={{xs: 2, md: 4}}>
             <RecoilRoot>
             <Suspense fallback={<p>Loading Data . . . . .</p>}>
                 <Routes>
