@@ -1,6 +1,7 @@
 import { bankT } from './bankTypes';
 
-const URL: string = '/bank';
+const URL: string = 'https://prueba-tecnica-api.onrender.com/bank';
+// const URL: string = '/bank';
 
 export default async function fetchBankList (): Promise<bankT[]> {
     return fetch(URL)
