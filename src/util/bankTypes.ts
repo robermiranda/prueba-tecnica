@@ -5,6 +5,7 @@ export type bankT = {
     age: number;
     url: string;
     bankName: string;
+    color: string;
 }
 
 export const bank0 = {
@@ -13,4 +14,5 @@ export const bank0 = {
     age: 0,
     url: '',
     bankName: '',
+    color: '#1c2833',
 }
