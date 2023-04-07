@@ -27,6 +27,7 @@ export default function BankCard () {
                 theme.palette.mode === 'dark' ? '#1A2027' : theme.palette.grey[50]
         }}>
 
+        { ! bank ? <BankListLink/> :
         <Card>
             <CardMedia component="img"
                 image={bank?.url}
@@ -47,5 +48,6 @@ export default function BankCard () {
                 <BankListLink color={bank?.color}/>
             </CardActions>
         </Card>
+        }
     </Box>
 }
