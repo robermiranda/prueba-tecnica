@@ -44,7 +44,7 @@ export default function BankCard () {
                 </Typography>
             </CardContent>
             <CardActions>
-                <BankListLink/>
+                <BankListLink color={bank?.color}/>
             </CardActions>
         </Card>
     </Box>
