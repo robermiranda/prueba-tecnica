@@ -13,8 +13,7 @@ export default function BankList () {
             bankList.map((bank: bankT) => 
                 <Box key={bank.id} mb={2}>
                     <BankTile key={bank.id}
-                        bankName={bank.bankName}
-                        id={bank.id}/>
+                        bank={bank}/>
                 </Box>
             )
         }

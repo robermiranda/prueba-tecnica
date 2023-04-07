@@ -1,31 +1,31 @@
 import { Link, Paper, Typography } from '@mui/material';
 import { Link as RouterLink } from "react-router-dom";
+import { bankT } from '../util/bankTypes';
 
 type propsT = {
-    bankName: string;
-    id?: string;
+    bank: bankT;
 }
 
-export default function BankTile (props: propsT) {
+export default function BankTile ({ bank }: propsT) {
     return <Paper sx={{
         p:2,
         margin: "auto",
         maxWidth: 500,
         flexGrow: 1,
         backgroundColor: (theme) => 
-            theme.palette.mode === 'dark' ? '#1A2027' : theme.palette.grey[50]
+            theme.palette.mode === 'dark' ? '#1A2027' : bank.color
         }}>
         
         <Typography variant="body1" align="center">
             
-            <Link component={RouterLink} to={`/bank/${props.id}`}
+            <Link component={RouterLink} to={`/bank/${bank.id}`}
                 sx={{
                     textDecoration:"none",
-                    color:"inherit",
+                    color: "white",
                     variant:"body1"
                 }}>
             
-                {props.bankName}
+                {bank.bankName}
             </Link>
         </Typography>
     </Paper>
