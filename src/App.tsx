@@ -1,13 +1,13 @@
 import { Suspense } from 'react';
 import {RecoilRoot} from 'recoil';
-import BankList from './components/BankList';
 import { Box } from '@mui/material';
-import BankCard from './components/BankCard';
+import DetailContent from './components/DetailContent';
 import Page404 from './components/Page404';
 import {
     BrowserRouter as Router,
     Route,
     Routes } from "react-router-dom";
+import Home from './components/Home';
 
 
 function App() {
@@ -17,8 +17,8 @@ function App() {
                 <RecoilRoot>
                     <Suspense fallback={<p>Loading Data . . . . .</p>}>
                         <Routes>
-                            <Route path='/' element={ <BankList/> }/>
-                            <Route path='/bank/:id' element={ <BankCard/> }/>
+                            <Route path='/' element={ <Home/> }/>
+                            <Route path='/bank/:id' element={ <DetailContent/> }/>
                             <Route path='*' element={ <Page404/> }/>
                         </Routes>
                     </Suspense>
