@@ -4,8 +4,14 @@ import { atom, selector } from 'recoil';
 
 
 export const bankState = atom<bankT> ({
-    key: 'bankState',
+    key: 'bank-state',
     default: bank0
+});
+
+
+export const historyState = atom<string[]> ({
+    key: "history-state",
+    default: []
 });
 
 
