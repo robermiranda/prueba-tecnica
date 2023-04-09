@@ -10,10 +10,7 @@ type propsT = {
 
 export default function BankTile ({bank}: propsT) {
     return <Card sx={{
-        p:2,
-        margin: "auto",
-        maxWidth: 500,
-        flexGrow: 1,
+        p:1,
         backgroundColor: (theme) => 
             theme.palette.mode === 'dark' ? '#1A2027' : bank.color
         }}>
