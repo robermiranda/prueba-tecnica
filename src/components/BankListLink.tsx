@@ -7,9 +7,9 @@ export default function BankListLink (props: {color?: string}) {
         to={`/`}
         underline="always"
         sx={{
-            color: props.color? props.color: 'inherit',
+            color: props.color? props.color: 'blue',
         }}>
         
-        Bank List
+        Back to Bank List
     </Link>
 }
