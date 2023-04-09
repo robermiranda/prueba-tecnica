@@ -1,11 +1,10 @@
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
-import { useRecoilValue } from 'recoil';
-import { bankListState } from '../util/state';
+import { useRecoilValue, useRecoilState } from 'recoil';
+import { bankListState, historyState } from '../util/state';
 import { bankT } from '../util/bankTypes';
-import { Card, CardActions, CardContent,  CardMedia } from '@mui/material';
-import { Box, Typography }  from '@mui/material';
-import BankListLink from "./BankListLink";
+import { Card, CardContent, CardMedia } from '@mui/material';
+import { Typography }  from '@mui/material';
 
 
 export default function BankCard () {
@@ -13,21 +12,22 @@ export default function BankCard () {
     const { id } = useParams();
     const bankList = useRecoilValue(bankListState);
     const [bank, setBank] = useState<bankT>();
+    const [historyView, setHistoryView] = useRecoilState(historyState);
 
     useEffect(() => {
         const bank = bankList.find(bank => bank.id === id);
         setBank(bank);
     }, [id, bankList]);
 
-    return <Box sx={{
-            margin: "auto",
-            maxWidth: 800,
-            flexGrow: 1,
-            backgroundColor: (theme) => 
-                theme.palette.mode === 'dark' ? '#1A2027' : theme.palette.grey[50]
-        }}>
+    useEffect(() => {
+        if (bank) {
+            const hv = [...historyView, bank.bankName];
+            setHistoryView(hv);
+        }
+    }, [bank]);
 
-        { ! bank ? <BankListLink/> :
+    return <>
+        { ! bank ? null :
         <Card>
             <CardMedia component="img"
                 image={bank?.url}
@@ -44,10 +44,7 @@ export default function BankCard () {
                     Age: {bank?.age}
                 </Typography>
             </CardContent>
-            <CardActions>
-                <BankListLink color={bank?.color}/>
-            </CardActions>
         </Card>
         }
-    </Box>
+    </>
 }
