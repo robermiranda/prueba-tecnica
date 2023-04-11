@@ -11,9 +11,6 @@ export default function BankCard () {
 
     return <Box sx={{
             pt: 2,
-            margin: "auto",
-            maxWidth: 800,
-            flexGrow: 1,
         }}>
 
         <Card>
