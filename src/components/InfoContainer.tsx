@@ -1,6 +1,6 @@
 import { useRecoilValue } from 'recoil';
 import { infoState } from '../util/state';
-import { Box, Stack } from '@mui/material';
+import { Box, Grid } from '@mui/material';
 import BankCard from './BankCard';
 import HistoryView from './HistoryView';
 import HistoryButton from './HistoryButton';
@@ -17,15 +17,20 @@ export default function InfoContainer () {
         default: TheContent = HistoryView;
     }
 
+
     return <Box sx={{
         margin: "auto",
         maxWidth: 800,
         flexGrow: 1
         }}>
 
-        <Stack spacing={2}>
-            <TheContent/>
-            <HistoryButton/>
-        </Stack>
-    </Box>;
+        <Grid container rowSpacing={2}>
+            <Grid item xs={12}>
+                <TheContent/>
+            </Grid>
+            <Grid item xs={12} md={3}>
+                <HistoryButton/>
+            </Grid>
+        </Grid>
+    </Box>
 }

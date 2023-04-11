@@ -11,5 +11,9 @@ export default function HistoryButton () {
         setInfoState('info-history');
     }
 
-    return <Chip label="History View" variant="outlined" onClick={handleClick} />
+    return <Chip label="History View"
+        variant="outlined"
+        onClick={handleClick}
+        sx={{width: 1}}/>
+    
 }
