@@ -1,13 +1,23 @@
-import { useRecoilValue } from 'recoil';
+import { useRecoilValue, useRecoilState } from 'recoil';
+import { historyState } from '../util/state';
 import { bankState } from '../util/state';
 import { bankT } from '../util/bankTypes';
 import { Card, CardContent,  CardMedia } from '@mui/material';
 import { Box, Typography }  from '@mui/material';
+import { useEffect } from 'react';
 
 
 export default function BankCard () {
 
     const bank: bankT = useRecoilValue<bankT>(bankState);
+
+    const [history, setHistory] = useRecoilState(historyState);
+
+    useEffect (() => {
+        if (bank && bank.bankName) {
+            setHistory([bank.bankName, ...history]);
+        }
+    }, [bank.bankName]);
 
     return <Box sx={{
             pt: 2,

@@ -16,6 +16,11 @@ export const infoState = atom<string> ({
 });
 
 
+export const historyState = atom<string[]> ({
+    key: "history-state-atom",
+    default: []
+});
+
 const bankListFetched = selector<bankT[]> ({
     key: 'bankListFetched',
     get: async () => {

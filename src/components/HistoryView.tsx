@@ -1,3 +1,19 @@
+import { useRecoilValue } from 'recoil';
+import { historyState } from '../util/state';
+import { List, ListItem, ListItemText } from '@mui/material';
+
+
 export default function HistoryView () {
-    return <p>history view por implementar</p>
+
+    const history = useRecoilValue<string[]>(historyState);
+
+    return <List>
+        {
+            history.map((item, index) => 
+                <ListItem key={index}>
+                    <ListItemText primary={`${++index}. ${item}`}/>
+                </ListItem>
+            )
+        }
+    </List>
 }
