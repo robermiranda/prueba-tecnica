@@ -1,6 +1,6 @@
 import { Box } from "@mui/material";
-import BankCard from "./BankCard";
 import ResponsiveAppBar from "./ResponsiveAppBar";
+import InfoContainer from "./InfoContainer";
 
 
 export default function OnePage () {
@@ -12,7 +12,7 @@ export default function OnePage () {
         }}>
 
         <ResponsiveAppBar/>
-        <BankCard/>
+        <InfoContainer/>
     </Box>
 }
 
