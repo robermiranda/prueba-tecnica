@@ -11,7 +11,7 @@ export default function HistoryView () {
         {
             history.map((item, index) => 
                 <ListItem key={index}>
-                    <ListItemText primary={`${++index}. ${item}`}/>
+                    <ListItemText primary={`${history.length - index}. ${item}`}/>
                 </ListItem>
             )
         }
