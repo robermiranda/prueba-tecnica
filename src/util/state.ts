@@ -8,6 +8,13 @@ export const bankState = atom ({
     default: bank0
 });
 
+// info-bank
+// info-history
+export const infoState = atom<string> ({
+    key: 'info-state-atom',
+    default: 'info-bank'
+});
+
 
 const bankListFetched = selector<bankT[]> ({
     key: 'bankListFetched',
