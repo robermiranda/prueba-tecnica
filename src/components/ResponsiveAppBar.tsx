@@ -11,7 +11,8 @@ import MenuItem from '@mui/material/MenuItem';
 import { Typography } from '@mui/material';
 import { ThemeProvider, createTheme } from '@mui/material/styles';
 import { bankNameState, bankListState, bankState } from '../util/state';
-import { useRecoilValue, useRecoilState } from 'recoil';
+import { useRecoilValue, useRecoilState, useSetRecoilState } from 'recoil';
+import { infoState } from '../util/state';
 import { bankT } from '../util/bankTypes';
 
 
@@ -25,6 +26,8 @@ export default function ResponsiveAppBar () {
 
     const [bank, setBank] = useRecoilState(bankState);
 
+    const setInfoState = useSetRecoilState<string>(infoState);
+
     const handleOpenNavMenu = (event: React.MouseEvent<HTMLElement>) => {
         setAnchorElNav(event.currentTarget);
     };
@@ -35,7 +38,10 @@ export default function ResponsiveAppBar () {
 
     function setBankCard (bankName: string): void {
         const bank = bankList.find(bank => bank.bankName === bankName);
-        if (bank && "bankName" in bank) setBank(bank);
+        if (bank && "bankName" in bank) {
+            setBank(bank);
+            setInfoState('info-bank');
+        }
     }
 
     const bankTheme = createTheme({
