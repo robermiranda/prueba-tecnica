@@ -13,7 +13,7 @@ The app consists of the following features:
 
 Regarding the architecture's app, it should be noted that it is determined by the framework used (react in this case). Then we can affirm that the app has a component-based architecture.
 
-Visit the app: [prueba-tecnica](https://yganaste.com/)
+Visit the app: [prueba-tecnica](https://yganaste.onrender.com/)
 
 Visit the app one-page version: [prueba-tecnica-one-page](https://yganaste-1p.onrender.com/)
 
